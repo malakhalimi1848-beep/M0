@@ -335,3 +335,57 @@ function send(){
 
 </body>
 </html>
+/* ===== UX POLISH SYSTEM ===== */
+body{
+  letter-spacing: 0.2px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,h2,h3{
+  letter-spacing: -0.5px;
+}
+
+p{
+  line-height: 1.7;
+}
+
+/* smoother transitions globally */
+*{
+  transition: all 0.25s ease;
+}.card, .product-card, .feature-card{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* hover UX premium */
+.card:hover, .product-card:hover, .feature-card:hover{
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  border-color: rgba(255,255,255,0.2);
+}<script>
+document.addEventListener("mousemove", (e)=>{
+  document.querySelectorAll(".card").forEach(card=>{
+    const x = (window.innerWidth/2 - e.pageX) / 25;
+    const y = (window.innerHeight/2 - e.pageY) / 25;
+
+    card.style.transform = `rotateY(${x}deg) rotateX(${y}deg) translateY(-5px)`;
+  });
+});
+</script>html{
+  scroll-behavior: smooth;
+}button, input, a{
+  outline: none;
+}
+
+button:focus, input:focus{
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.2);
+}.chat-fab{
+  transform: scale(1);
+}
+
+.chat-fab:hover{
+  transform: scale(1.1) rotate(10deg);
+}
