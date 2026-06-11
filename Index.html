@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechZone | Premium Electronics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0a0a0a;
+  --card:#111;
+  --card2:#1a1a1a;
+  --text:#fff;
+  --muted:#aaa;
+  --border:#222;
+  --accent:#ffffff;
+  --radius:18px;
+  --font:'Cairo',sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 5%;
+  background:rgba(10,10,10,0.8);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+
+.logo{
+  font-weight:900;
+  font-size:1.4rem;
+  letter-spacing:2px;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+}
+
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:0.9rem;
+}
+
+.nav-links a:hover{
+  color:var(--text);
+}
+
+.btn{
+  padding:10px 18px;
+  border-radius:50px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text);
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 20px;
+}
+
+.hero h1{
+  font-size:3rem;
+  font-weight:900;
+}
+
+.hero p{
+  color:var(--muted);
+  margin:15px 0 30px;
+}
+
+.hero .btn{
+  margin:5px;
+}
+
+/* PRODUCTS */
+.products{
+  padding:80px 5%;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  perspective:1000px;
+}
+
+/* 3D CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transform-style:preserve-3d;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:rotateY(10deg) rotateX(10deg) scale(1.05);
+}
+
+.img{
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:3rem;
+  background:var(--card2);
+}
+
+.info{
+  padding:15px;
+}
+
+.price{
+  color:#fff;
+  font-weight:900;
+}
+
+/* FEATURES */
+.features{
+  padding:80px 5%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.feature{
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  background:var(--card);
+}
+
+/* CHAT */
+.chat-fab{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#fff;
+  color:#000;
+  border:none;
+  font-size:1.5rem;
+  cursor:pointer;
+}
+
+.chat{
+  position:fixed;
+  bottom:90px;
+  left:20px;
+  width:340px;
+  height:500px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  display:none;
+  flex-direction:column;
+}
+
+.chat.active{display:flex;}
+
+.chat-header{
+  padding:15px;
+  border-bottom:1px solid var(--border);
+}
+
+.messages{
+  flex:1;
+  padding:10px;
+  overflow:auto;
+}
+
+.msg{
+  margin:10px 0;
+}
+
+.bot{color:#fff;}
+.user{color:var(--muted);text-align:right;}
+
+.input{
+  display:flex;
+  border-top:1px solid var(--border);
+}
+
+.input input{
+  flex:1;
+  padding:10px;
+  background:transparent;
+  border:none;
+  color:#fff;
+}
+
+.input button{
+  padding:10px;
+  background:#fff;
+  color:#000;
+  border:none;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">TECHZONE</div>
+  <div class="nav-links">
+    <a href="#products">Products</a>
+    <a href="#features">Features</a>
+  </div>
+  <button class="btn">Contact</button>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Premium Tech Store</h1>
+    <p>Minimal design. Maximum performance. Best electronics in one place.</p>
+    <button class="btn">Shop Now</button>
+    <button class="btn">Chat</button>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <h2>Products</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="img">📱</div>
+      <div class="info">
+        <h3>iPhone 16 Pro</h3>
+        <p class="price">195,000 DZD</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img">💻</div>
+      <div class="info">
+        <h3>MacBook Pro M4</h3>
+        <p class="price">250,000 DZD</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img">🎧</div>
+      <div class="info">
+        <h3>Sony Headphones</h3>
+        <p class="price">28,000 DZD</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="feature">✔ Original Products</div>
+  <div class="feature">🚚 Fast Delivery</div>
+  <div class="feature">🔒 Secure Payment</div>
+  <div class="feature">🛠 Support 24/7</div>
+</section>
+
+<!-- CHAT -->
+<button class="chat-fab" onclick="toggleChat()">💬</button>
+
+<div class="chat" id="chat">
+  <div class="chat-header">ZBot Assistant</div>
+  <div class="messages" id="messages"></div>
+
+  <div class="input">
+    <input id="input" placeholder="Type here..." onkeydown="if(event.key==='Enter')send()">
+    <button onclick="send()">➤</button>
+  </div>
+</div>
+
+<script>
+let chat=false;
+
+function toggleChat(){
+  chat=!chat;
+  document.getElementById("chat").classList.toggle("active");
+  if(chat) bot("مرحباً 👋 أنا مساعد TechZone. هل تريد الطلب؟");
+}
+
+function add(text,type){
+  let div=document.createElement("div");
+  div.className="msg "+type;
+  div.innerHTML=text;
+  document.getElementById("messages").appendChild(div);
+}
+
+function bot(t){add(t,"bot");}
+function user(t){add(t,"user");}
+
+function send(){
+  let inp=document.getElementById("input");
+  let v=inp.value;
+  if(!v) return;
+  user(v);
+  inp.value="";
+
+  setTimeout(()=>{
+    if(v.includes("طلب")) bot("تمام 👍 اختر المنتج وسنساعدك في الطلب");
+    else bot("هل تريد المساعدة في الشراء؟ 😊");
+  },500);
+}
+</script>
+
+</body>
+</html>
